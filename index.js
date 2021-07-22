@@ -76,7 +76,7 @@ function firstPrompt() {
     });
 }
 
-//////////////////========================= 1."View Employees"/ READ all, SELECT * FROM
+//"View Employees"/ READ all, SELECT * FROM
 
 function viewEmployee() {
   console.log("Viewing employees\n");
@@ -102,7 +102,7 @@ function viewEmployee() {
   // console.log(query.sql);
 }
 
-//========================================= 2."View Employees by Department" / READ by, SELECT * FROM
+//"View Employees by Department" / READ by, SELECT * FROM
 
 // Make a department array
 
@@ -174,11 +174,11 @@ function promptDepartment(departmentChoices) {
     });
 }
 
-//========================================= 3."View Employees by Manager"
+//"View Employees by Manager"
 
 
 
-//========================================= 4."Add Employee" / CREATE: INSERT INTO
+//"Add Employee" / CREATE: INSERT INTO
 
 // Make a employee array
 
@@ -254,7 +254,7 @@ function promptInsert(roleChoices) {
     });
 }
 
-//========================================= 5."Remove Employees" / DELETE, DELETE FROM
+//"Remove Employees" / DELETE, DELETE FROM
 
 // Make a employee array to delete
 
@@ -308,7 +308,7 @@ function promptDelete(deleteEmployeeChoices) {
     });
 }
 
-//========================================= 6."Update Employee Role" / UPDATE,
+//"Update Employee Role" / UPDATE,
 
 function updateEmployeeRole() { 
   employeeArray();
@@ -403,7 +403,7 @@ function promptEmployeeRole(employeeChoices, roleChoices) {
 
 
 
-//////////////////========================= 7."Add Role" / CREATE: INSERT INTO
+//."Add Role" / CREATE: INSERT INTO
 
 function addRole() {
 
@@ -474,4 +474,4 @@ function promptAddRole(departmentChoices) {
 }
 
 
-//========================================= 8."Remove Role"
+//"Remove Role"
