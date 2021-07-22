@@ -1,14 +1,87 @@
-# 12-mysql-employee-tracker
+# Homework12-EmployeeTracker
+
+# Unit 12 MySQL Homework: Employee Tracker
 
 Developers are often tasked with creating interfaces that make it easy for non-developers to view and interact with information stored in databases. Often these interfaces are known as **C**ontent **M**anagement **S**ystems. In this homework assignment, your challenge is to architect and build a solution for managing a company's employees using node, inquirer, and MySQL.
 
-- [Live Link to Demo](https://www.youtube.com/watch?v=xP8feYon4gw&t=5s)
+## Instructions
 
-## Demo 
+Design the following database schema containing three tables:
 
-![Demo](https://github.com/EdenKhaos/12-mysql-employee-tracker/blob/master/assets/12-Employee-Tracker-Demo.gif)
+![Database Schema](Assets/schema.png)
 
-## Description
+* **department**:
+
+  * **id** - INT PRIMARY KEY
+  * **name** - VARCHAR(30) to hold department name
+
+* **role**:
+
+  * **id** - INT PRIMARY KEY
+  * **title** -  VARCHAR(30) to hold role title
+  * **salary** -  DECIMAL to hold role salary
+  * **department_id** -  INT to hold reference to department role belongs to
+
+* **employee**:
+
+  * **id** - INT PRIMARY KEY
+  * **first_name** - VARCHAR(30) to hold employee first name
+  * **last_name** - VARCHAR(30) to hold employee last name
+  * **role_id** - INT to hold reference to role employee has
+  * **manager_id** - INT to hold reference to another employee that manager of the current employee. This field may be null if the employee has no manager
+  
+Build a command-line application that at a minimum allows the user to:
+
+  * Add departments, roles, employees
+
+  * View departments, roles, employees
+
+  * Update employee roles
+
+Bonus points if you're able to:
+
+  * Update employee managers
+
+  * View employees by manager
+
+  * Delete departments, roles, and employees
+
+  * View the total utilized budget of a department -- ie the combined salaries of all employees in that department
+
+We can frame this challenge as follows:
+
+```
+As a business owner
+I want to be able to view and manage the departments, roles, and employees in my company
+So that I can organize and plan my business
+```
+
+How do you deliver this? Here are some guidelines:
+
+* Use the [MySQL](https://www.npmjs.com/package/mysql) NPM package to connect to your MySQL database and perform queries.
+
+* Use [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3) NPM package to interact with the user via the command-line.
+
+* Use [console.table](https://www.npmjs.com/package/console.table) to print MySQL rows to the console. There is a built-in version of `console.table`, but the NPM package formats the data a little better for our purposes.
+
+* You may wish to have a separate file containing functions for performing specific SQL queries you'll need to use. Could a constructor function or a class be helpful for organizing these?
+
+* You will need to perform a variety of SQL JOINS to complete this assignment, and it's recommended you review the week's activities if you need a refresher on this.
+
+![Employee Tracker](Assets/employee-tracker.gif)
+
+### Hints
+
+* You may wish to include a `seed.sql` file to pre-populate your database. This will make development of individual features much easier.
+
+* Focus on getting the basic functionality completed before working on more advanced features.
+
+* Review the week's activities for a refresher on MySQL.
+
+* Check out [SQL Bolt](https://sqlbolt.com/) for some extra MySQL help.
+
+## Minimum Requirements
+
 * Functional application.
 
 * GitHub repository with a unique name and a README describing the project.
@@ -21,39 +94,14 @@ Developers are often tasked with creating interfaces that make it easy for non-d
 
   * Update employee roles
 
-## User Story
-```
-As a business owner
-I want to be able to view and manage the departments, roles, and employees in my company
-So that I can organize and plan my business
-```
-# Tech Used
-- inquirer
-- mySQL
-- console.table
-- Javascript
-- Node.js
+## Bonus
 
-## Installation
-1. Clone from GitHub
-2. Open project directory, then npm install to install all required dependencies 
+* The command-line application should allow users to:
 
-## Usage
-1. install npm init -y to create a new .json file
-2. npm i
-3. npm i inquirer
-4. npm i mysql
-5. npm i console.table
-6. make sure to run .sql file in mySQL workbench before running server.js so that tables are able to render correctly
-7. run node server.js
-8. make sure server.js is connected to SQL before continuing
-9. run through prompts as required 
+  * Update employee managers
 
-## Repository
+  * View employees by manager
 
-  - [Project Repo](https://github.com/EdenKhaos/12-mysql-employee-tracker)
+  * Delete departments, roles, and employees
 
-## Contributions
-1. ![GitHub license](https://img.shields.io/badge/Made%20by-%40EdenKhaos-orange)
-2. No front end files required.
-3. use seed.sql to create an existing table to pull sample information from to make it easier to run through the app.
+  * View the total utilized budget of a department -- ie the combined salaries of all employees in that department
