@@ -20,8 +20,9 @@
   "homepage": "https://github.com/nalhomsi/track-your-team#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "inquirer": "^7.0.0",
-    "mysql": "^2.17.1"
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5"
   },
   "devDependencies": {}
 }
